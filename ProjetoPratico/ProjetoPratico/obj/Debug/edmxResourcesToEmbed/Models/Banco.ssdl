@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Atividade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prazo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Competencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_superior" Type="int" />
+    <Property Name="ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Projeto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="50" />
+    <Property Name="prazo" Type="varchar" MaxLength="50" />
+    <Property Name="observacao" Type="varchar" MaxLength="50" />
+    <Property Name="ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cpf" Type="varchar" MaxLength="50" />
+    <Property Name="rg" Type="varchar" MaxLength="30" />
+    <Property Name="telefone" Type="varchar" MaxLength="30" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="estadoCivil" Type="int" />
+    <Property Name="paginaPessoal" Type="varchar" MaxLength="50" />
+    <Property Name="login" Type="varchar" MaxLength="50" />
+    <Property Name="senha" Type="varchar" MaxLength="50" />
+    <Property Name="ativo" Type="bit" />
+    <Property Name="funcao" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BancoModelStoreContainer">
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Competencia" EntityType="Self.Competencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projeto" EntityType="Self.Projeto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

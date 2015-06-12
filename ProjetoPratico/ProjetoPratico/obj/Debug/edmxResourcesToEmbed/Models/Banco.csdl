@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Atividade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prazo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Competencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_superior" Type="Int32" />
+    <Property Name="ativo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Projeto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prazo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ativo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="telefone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estadoCivil" Type="Int32" />
+    <Property Name="paginaPessoal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ativo" Type="Boolean" />
+    <Property Name="funcao" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" />
+    <EntitySet Name="Competencia" EntityType="Self.Competencia" />
+    <EntitySet Name="Projeto" EntityType="Self.Projeto" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+  </EntityContainer>
+</Schema>

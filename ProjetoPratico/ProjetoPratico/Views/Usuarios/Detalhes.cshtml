@@ -1,0 +1,98 @@
+﻿@model ProjetoPratico.Models.Usuario
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoCivil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estadoCivil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paginaPessoal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paginaPessoal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ativo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", "Usuarios", new { id = Model.id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Voltar", "Index", "Usuarios", new { @class = "btn btn-default" })
+</p>

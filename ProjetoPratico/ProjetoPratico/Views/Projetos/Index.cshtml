@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProjetoPratico.Models.Projeto>
+
+@{
+    ViewBag.Title = "Projetos";
+}
+
+<h2>Projetos</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Projeto", "Adicionar", "Projetos", new { @class = "btn btn-primary" })
+</p>
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prazo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ativo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prazo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ativo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.id }, new { @class = "btn btn-primary btn-xs" }) |
+                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.id }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.id }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="container">
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Sistema de Gestão de Pessoas e Conhecimento</h2>
+        <label for="inputEmail" class="sr-only">Usuário</label>
+        <input type="txt" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Manter conectado
+            </label>
+        </div>
+        @Html.ActionLink("Entrar", "Index", "Home", new { @class = "btn btn-primary btn-block" })
+    </form>
+
+</div> <!-- /container -->
