@@ -11,19 +11,12 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Competencia
     {
         public int id { get; set; }
-        [Required]
-        [Display(Name = "Descrição")]
         public string descricao { get; set; }
-        [Required]
-        [Display(Name = "Categoria Superior")]
         public Nullable<int> id_superior { get; set; }
-        [Required]
-        [Display(Name = "Ativo")]
-        public Nullable<Boolean> ativo { get; set; }
+        public Nullable<bool> ativo { get; set; }
     }
 }

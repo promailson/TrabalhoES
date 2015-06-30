@@ -11,41 +11,20 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Usuario
     {
         public int id { get; set; }
-        [Required]
-        [Display(Name = "Nome")]
         public string Nome { get; set; }
-        [Required]
-        [Display(Name = "CPF")]
         public string cpf { get; set; }
-        [Required]
-        [Display(Name = "RG")]
         public string rg { get; set; }
-        [Display(Name = "Telefone")]
         public string telefone { get; set; }
-        [Required]
-        [Display(Name = "Email")]
         public string email { get; set; }
-        [Display(Name = "Estado Civil")]
         public Nullable<int> estadoCivil { get; set; }
-        [Display(Name = "Pagina pessoal")]
         public string paginaPessoal { get; set; }
-        [Required]
-        [Display(Name = "Login")]
         public string login { get; set; }
-        [Required]
-        [Display(Name = "Senha")]
-        [DataType(DataType.Password)]
         public string senha { get; set; }
-        [Required]
-        [Display(Name = "Ativo")]
-        public Nullable<Boolean> ativo { get; set; }
-        [Required]
-        [Display(Name = "Função")]
+        public Nullable<bool> ativo { get; set; }
         public Nullable<int> funcao { get; set; }
     }
 }
