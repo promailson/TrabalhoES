@@ -1,13 +1,13 @@
-﻿@model IEnumerable<ProjetoPratico.Models.Usuario>
+﻿@model IEnumerable<ProjetoPratico.Models.Colaborador>
 
 @{
-    ViewBag.Title = "Usuários";
+    ViewBag.Title = "Colaboradores";
 }
 
 <h2>Usuários cadastrados</h2>
 
 <p>
-    @Html.ActionLink("Adicionar Usuário", "Adicionar", "Usuarios", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Adicionar Colaborador", "Adicionar", "Colaboradores", new { @class = "btn btn-primary" })
 </p>
 <table class="table table-striped table-hover table-bordered">
     <tr>

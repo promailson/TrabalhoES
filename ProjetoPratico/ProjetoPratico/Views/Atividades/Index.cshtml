@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjetoPratico.Models.Atividade>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Adicionar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prazo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prazo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,25 +1,25 @@
-﻿@model ProjetoPratico.Models.Usuario
+﻿@model ProjetoPratico.Models.Colaborador
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = "Adicionar";
 }
 
-<h2>Editar</h2>
+<h2>Adicionar</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+  
     <div class="form-horizontal">
-        <h4>Usuario</h4>
+        <h4>Usuário</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id)
+    
         <div class="form-group">
             @Html.LabelFor(model => model.funcao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-              @Html.DropDownListFor(model => model.funcao, (List<SelectListItem>)ViewBag.funcao, "Selecione", new { @class = "form-control" })
+                @Html.DropDownList("funcao", (List<SelectListItem>)ViewBag.funcao, "Selecione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.funcao, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -107,13 +107,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-                @Html.ActionLink("Voltar", "Index", "Usuarios", new { @class = "btn btn-default" })
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+                 @Html.ActionLink("Voltar", "Index", "Colaboradores", new { @class = "btn btn-default" })
             </div>
         </div>
     </div>
 }
 
+<div>
+
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

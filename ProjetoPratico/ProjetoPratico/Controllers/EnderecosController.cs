@@ -10,112 +10,107 @@ using ProjetoPratico.Models;
 
 namespace ProjetoPratico.Controllers
 {
-    public class UsuariosController : Controller
+    public class EnderecosController : Controller
     {
         private BancoEntities db = new BancoEntities();
 
+        // GET: Enderecos
         public ActionResult Index()
         {
-            return View(db.Usuario.ToList());
+            return View(db.Endereco.ToList());
         }
 
-
+        // GET: Enderecos/Details/5
         public ActionResult Detalhes(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuario.Find(id);
-            if (usuario == null)
+            Endereco endereco = db.Endereco.Find(id);
+            if (endereco == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(endereco);
         }
 
-
+        // GET: Enderecos/Create
         public ActionResult Adicionar()
         {
-            var funcao = new List<SelectListItem> {
-              new SelectListItem { Text = "Administrador", Value = "0" },
-              new SelectListItem { Text = "Gerente", Value ="1"},
-              new SelectListItem { Text = "Moderador", Value ="2"},
-              new SelectListItem { Text = "Colaborador", Value ="3"}};
-            ViewBag.funcao = funcao;
             return View();
         }
 
+        // POST: Enderecos/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Adicionar([Bind(Include = "id,Nome,cpf,rg,telefone,email,estadoCivil,paginaPessoal,login,senha,ativo,funcao")] Usuario usuario)
+        public ActionResult Adicionar([Bind(Include = "Id,logradouro,bairro,numero,complemento,cep,cidade,uf")] Endereco endereco)
         {
             if (ModelState.IsValid)
             {
-                db.Usuario.Add(usuario);
+                db.Endereco.Add(endereco);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(usuario);
+            return View(endereco);
         }
 
-
+        // GET: Enderecos/Edit/5
         public ActionResult Editar(int? id)
         {
-            var funcao = new List<SelectListItem> {
-              new SelectListItem { Text = "Administrador", Value = "0" },
-              new SelectListItem { Text = "Gerente", Value ="1"},
-              new SelectListItem { Text = "Moderador", Value ="2"},
-              new SelectListItem { Text = "Colaborador", Value ="3"}};
-            ViewBag.funcao = funcao;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuario.Find(id);
-            if (usuario == null)
+            Endereco endereco = db.Endereco.Find(id);
+            if (endereco == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(endereco);
         }
 
+        // POST: Enderecos/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "id,Nome,cpf,rg,telefone,email,estadoCivil,paginaPessoal,login,senha,ativo,funcao")] Usuario usuario)
+        public ActionResult Editar([Bind(Include = "Id,logradouro,bairro,numero,complemento,cep,cidade,uf")] Endereco endereco)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(usuario).State = EntityState.Modified;
+                db.Entry(endereco).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(usuario);
+            return View(endereco);
         }
 
-
+        // GET: Enderecos/Delete/5
         public ActionResult Excluir(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Usuario.Find(id);
-            if (usuario == null)
+            Endereco endereco = db.Endereco.Find(id);
+            if (endereco == null)
             {
                 return HttpNotFound();
             }
-            return View(usuario);
+            return View(endereco);
         }
 
-
+        // POST: Enderecos/Delete/5
         [HttpPost, ActionName("Excluir")]
         [ValidateAntiForgeryToken]
-        public ActionResult CorfirmarExclusao(int id)
+        public ActionResult ConfirmarExclusao(int id)
         {
-            Usuario usuario = db.Usuario.Find(id);
-            db.Usuario.Remove(usuario);
+            Endereco endereco = db.Endereco.Find(id);
+            db.Endereco.Remove(endereco);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

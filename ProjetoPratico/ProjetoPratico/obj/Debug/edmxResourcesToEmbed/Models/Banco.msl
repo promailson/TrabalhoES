@@ -31,21 +31,54 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="BancoModel.Usuario">
-        <MappingFragment StoreEntitySet="Usuario">
+    <EntitySetMapping Name="AnaliseAtividade">
+      <EntityTypeMapping TypeName="BancoModel.AnaliseAtividade">
+        <MappingFragment StoreEntitySet="AnaliseAtividade">
+          <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
+          <ScalarProperty Name="id_atividade" ColumnName="id_atividade" />
+          <ScalarProperty Name="feedback" ColumnName="feedback" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colaborador">
+      <EntityTypeMapping TypeName="BancoModel.Colaborador">
+        <MappingFragment StoreEntitySet="Colaborador">
           <ScalarProperty Name="funcao" ColumnName="funcao" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="cpf" ColumnName="cpf" />
-          <ScalarProperty Name="rg" ColumnName="rg" />
-          <ScalarProperty Name="telefone" ColumnName="telefone" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
-          <ScalarProperty Name="paginaPessoal" ColumnName="paginaPessoal" />
-          <ScalarProperty Name="login" ColumnName="login" />
-          <ScalarProperty Name="senha" ColumnName="senha" />
           <ScalarProperty Name="ativo" ColumnName="ativo" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="paginaPessoal" ColumnName="paginaPessoal" />
+          <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColaboradorEndereco">
+      <EntityTypeMapping TypeName="BancoModel.ColaboradorEndereco">
+        <MappingFragment StoreEntitySet="ColaboradorEndereco">
+          <ScalarProperty Name="id_endereco" ColumnName="id_endereco" />
+          <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Endereco">
+      <EntityTypeMapping TypeName="BancoModel.Endereco">
+        <MappingFragment StoreEntitySet="Endereco">
+          <ScalarProperty Name="uf" ColumnName="uf" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnaliseAtividade">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="feedback" Type="text" />
+          <Property Name="id_atividade" Type="int" Nullable="false" />
+          <Property Name="id_colaborador" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Atividade">
           <Key>
             <PropertyRef Name="id" />
@@ -13,26 +22,7 @@
           <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="prazo" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Competencia">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="id_superior" Type="int" />
-          <Property Name="ativo" Type="bit" />
-        </EntityType>
-        <EntityType Name="Projeto">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="descricao" Type="varchar" MaxLength="50" />
-          <Property Name="prazo" Type="varchar" MaxLength="50" />
-          <Property Name="observacao" Type="varchar" MaxLength="50" />
-          <Property Name="ativo" Type="bit" />
-        </EntityType>
-        <EntityType Name="Usuario">
+        <EntityType Name="Colaborador">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -49,11 +39,54 @@
           <Property Name="ativo" Type="bit" />
           <Property Name="funcao" Type="int" />
         </EntityType>
+        <EntityType Name="ColaboradorEndereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="id_colaborador" Type="int" Nullable="false" />
+          <Property Name="id_endereco" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Competencia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_superior" Type="int" />
+          <Property Name="ativo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Endereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="logradouro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bairro" Type="varchar" MaxLength="50" />
+          <Property Name="numero" Type="varchar" MaxLength="50" />
+          <Property Name="complemento" Type="varchar" MaxLength="50" />
+          <Property Name="cep" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cidade" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="uf" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projeto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" />
+          <Property Name="prazo" Type="varchar" MaxLength="50" />
+          <Property Name="observacao" Type="varchar" MaxLength="50" />
+          <Property Name="ativo" Type="bit" />
+        </EntityType>
         <EntityContainer Name="BancoModelStoreContainer">
+          <EntitySet Name="AnaliseAtividade" EntityType="Self.AnaliseAtividade" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Atividade" EntityType="Self.Atividade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ColaboradorEndereco" EntityType="Self.ColaboradorEndereco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Competencia" EntityType="Self.Competencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Endereco" EntityType="Self.Endereco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Projeto" EntityType="Self.Projeto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -86,12 +119,30 @@
           <Property Name="observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ativo" Type="Boolean" />
         </EntityType>
-        <EntityType Name="Usuario">
+        <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Atividade" EntityType="Self.Atividade" />
+          <EntitySet Name="Competencia" EntityType="Self.Competencia" />
+          <EntitySet Name="Projeto" EntityType="Self.Projeto" />
+          <EntitySet Name="AnaliseAtividade" EntityType="BancoModel.AnaliseAtividade" />
+          <EntitySet Name="Colaborador" EntityType="BancoModel.Colaborador" />
+          <EntitySet Name="ColaboradorEndereco" EntityType="BancoModel.ColaboradorEndereco" />
+          <EntitySet Name="Endereco" EntityType="BancoModel.Endereco" />
+        </EntityContainer>
+        <EntityType Name="AnaliseAtividade">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feedback" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="id_atividade" Type="Int32" Nullable="false" />
+          <Property Name="id_colaborador" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colaborador">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="rg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="telefone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -103,12 +154,27 @@
           <Property Name="ativo" Type="Boolean" />
           <Property Name="funcao" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Atividade" EntityType="Self.Atividade" />
-          <EntitySet Name="Competencia" EntityType="Self.Competencia" />
-          <EntitySet Name="Projeto" EntityType="Self.Projeto" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-        </EntityContainer>
+        <EntityType Name="ColaboradorEndereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="id_colaborador" Type="Int32" Nullable="false" />
+          <Property Name="id_endereco" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Endereco">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="logradouro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cep" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -145,21 +211,54 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="BancoModel.Usuario">
-              <MappingFragment StoreEntitySet="Usuario">
+          <EntitySetMapping Name="AnaliseAtividade">
+            <EntityTypeMapping TypeName="BancoModel.AnaliseAtividade">
+              <MappingFragment StoreEntitySet="AnaliseAtividade">
+                <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
+                <ScalarProperty Name="id_atividade" ColumnName="id_atividade" />
+                <ScalarProperty Name="feedback" ColumnName="feedback" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colaborador">
+            <EntityTypeMapping TypeName="BancoModel.Colaborador">
+              <MappingFragment StoreEntitySet="Colaborador">
                 <ScalarProperty Name="funcao" ColumnName="funcao" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Nome" ColumnName="Nome" />
-                <ScalarProperty Name="cpf" ColumnName="cpf" />
-                <ScalarProperty Name="rg" ColumnName="rg" />
-                <ScalarProperty Name="telefone" ColumnName="telefone" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
-                <ScalarProperty Name="paginaPessoal" ColumnName="paginaPessoal" />
-                <ScalarProperty Name="login" ColumnName="login" />
-                <ScalarProperty Name="senha" ColumnName="senha" />
                 <ScalarProperty Name="ativo" ColumnName="ativo" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="paginaPessoal" ColumnName="paginaPessoal" />
+                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="rg" ColumnName="rg" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ColaboradorEndereco">
+            <EntityTypeMapping TypeName="BancoModel.ColaboradorEndereco">
+              <MappingFragment StoreEntitySet="ColaboradorEndereco">
+                <ScalarProperty Name="id_endereco" ColumnName="id_endereco" />
+                <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Endereco">
+            <EntityTypeMapping TypeName="BancoModel.Endereco">
+              <MappingFragment StoreEntitySet="Endereco">
+                <ScalarProperty Name="uf" ColumnName="uf" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="complemento" ColumnName="complemento" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

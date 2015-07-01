@@ -119,12 +119,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AtividadesController.cs" />
     <Compile Include="Controllers\CompetenciasController.cs" />
+    <Compile Include="Controllers\EnderecosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjetosController.cs" />
-    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\ColaboradoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnaliseAtividade.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Atividade.cs">
       <DependentUpon>Banco.tt</DependentUpon>
@@ -144,13 +149,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Banco.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Colaborador.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ColaboradorEndereco.cs">
+      <DependentUpon>Banco.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Competencia.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Projeto.cs">
+    <Compile Include="Models\Endereco.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Usuario.cs">
+    <Compile Include="Models\Projeto.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,11 +224,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Usuarios\Adicionar.cshtml" />
-    <Content Include="Views\Usuarios\Excluir.cshtml" />
-    <Content Include="Views\Usuarios\Detalhes.cshtml" />
-    <Content Include="Views\Usuarios\Editar.cshtml" />
-    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Colaboradores\Adicionar.cshtml" />
+    <Content Include="Views\Colaboradores\Excluir.cshtml" />
+    <Content Include="Views\Colaboradores\Detalhes.cshtml" />
+    <Content Include="Views\Colaboradores\Editar.cshtml" />
+    <Content Include="Views\Colaboradores\Index.cshtml" />
     <Content Include="Views\Projetos\Adicionar.cshtml" />
     <Content Include="Views\Projetos\Excluir.cshtml" />
     <Content Include="Views\Projetos\Detalhes.cshtml" />
@@ -230,6 +241,16 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
+    <Content Include="Views\Atividades\Adicionar.cshtml" />
+    <Content Include="Views\Atividades\Excluir.cshtml" />
+    <Content Include="Views\Atividades\Detalhes.cshtml" />
+    <Content Include="Views\Atividades\Editar.cshtml" />
+    <Content Include="Views\Atividades\Index.cshtml" />
+    <Content Include="Views\Enderecos\Adicionar.cshtml" />
+    <Content Include="Views\Enderecos\Excluir.cshtml" />
+    <Content Include="Views\Enderecos\Detalhes.cshtml" />
+    <Content Include="Views\Enderecos\Editar.cshtml" />
+    <Content Include="Views\Enderecos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

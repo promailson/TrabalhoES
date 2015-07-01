@@ -27,12 +27,30 @@
     <Property Name="observacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ativo" Type="Boolean" />
   </EntityType>
-  <EntityType Name="Usuario">
+  <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" />
+    <EntitySet Name="Competencia" EntityType="Self.Competencia" />
+    <EntitySet Name="Projeto" EntityType="Self.Projeto" />
+    <EntitySet Name="AnaliseAtividade" EntityType="BancoModel.AnaliseAtividade" />
+    <EntitySet Name="Colaborador" EntityType="BancoModel.Colaborador" />
+    <EntitySet Name="ColaboradorEndereco" EntityType="BancoModel.ColaboradorEndereco" />
+    <EntitySet Name="Endereco" EntityType="BancoModel.Endereco" />
+  </EntityContainer>
+  <EntityType Name="AnaliseAtividade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="feedback" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="id_atividade" Type="Int32" Nullable="false" />
+    <Property Name="id_colaborador" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colaborador">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="rg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="telefone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -44,10 +62,25 @@
     <Property Name="ativo" Type="Boolean" />
     <Property Name="funcao" Type="Int32" />
   </EntityType>
-  <EntityContainer Name="BancoEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Atividade" EntityType="Self.Atividade" />
-    <EntitySet Name="Competencia" EntityType="Self.Competencia" />
-    <EntitySet Name="Projeto" EntityType="Self.Projeto" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-  </EntityContainer>
+  <EntityType Name="ColaboradorEndereco">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="id_colaborador" Type="Int32" Nullable="false" />
+    <Property Name="id_endereco" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logradouro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cep" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cidade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="uf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

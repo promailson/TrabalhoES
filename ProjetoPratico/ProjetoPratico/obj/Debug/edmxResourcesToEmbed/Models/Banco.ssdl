@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BancoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AnaliseAtividade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="feedback" Type="text" />
+    <Property Name="id_atividade" Type="int" Nullable="false" />
+    <Property Name="id_colaborador" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Atividade">
     <Key>
       <PropertyRef Name="id" />
@@ -8,26 +17,7 @@
     <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="prazo" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Competencia">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="id_superior" Type="int" />
-    <Property Name="ativo" Type="bit" />
-  </EntityType>
-  <EntityType Name="Projeto">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descricao" Type="varchar" MaxLength="50" />
-    <Property Name="prazo" Type="varchar" MaxLength="50" />
-    <Property Name="observacao" Type="varchar" MaxLength="50" />
-    <Property Name="ativo" Type="bit" />
-  </EntityType>
-  <EntityType Name="Usuario">
+  <EntityType Name="Colaborador">
     <Key>
       <PropertyRef Name="id" />
     </Key>
@@ -44,10 +34,53 @@
     <Property Name="ativo" Type="bit" />
     <Property Name="funcao" Type="int" />
   </EntityType>
+  <EntityType Name="ColaboradorEndereco">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="id_colaborador" Type="int" Nullable="false" />
+    <Property Name="id_endereco" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Competencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_superior" Type="int" />
+    <Property Name="ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logradouro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bairro" Type="varchar" MaxLength="50" />
+    <Property Name="numero" Type="varchar" MaxLength="50" />
+    <Property Name="complemento" Type="varchar" MaxLength="50" />
+    <Property Name="cep" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cidade" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="uf" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projeto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="50" />
+    <Property Name="prazo" Type="varchar" MaxLength="50" />
+    <Property Name="observacao" Type="varchar" MaxLength="50" />
+    <Property Name="ativo" Type="bit" />
+  </EntityType>
   <EntityContainer Name="BancoModelStoreContainer">
+    <EntitySet Name="AnaliseAtividade" EntityType="Self.AnaliseAtividade" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Atividade" EntityType="Self.Atividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColaboradorEndereco" EntityType="Self.ColaboradorEndereco" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competencia" EntityType="Self.Competencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Endereco" EntityType="Self.Endereco" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Projeto" EntityType="Self.Projeto" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

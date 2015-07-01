@@ -28,6 +28,9 @@ namespace ProjetoPratico.Models
         public virtual DbSet<Atividade> Atividade { get; set; }
         public virtual DbSet<Competencia> Competencia { get; set; }
         public virtual DbSet<Projeto> Projeto { get; set; }
-        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<AnaliseAtividade> AnaliseAtividade { get; set; }
+        public virtual DbSet<Colaborador> Colaborador { get; set; }
+        public virtual DbSet<ColaboradorEndereco> ColaboradorEndereco { get; set; }
+        public virtual DbSet<Endereco> Endereco { get; set; }
     }
 }
