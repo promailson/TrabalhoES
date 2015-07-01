@@ -20,8 +20,8 @@ namespace ProjetoPratico.Controllers
             return View(db.Atividade.ToList());
         }
 
-        // GET: Atividades/Detalhes/5
-        public ActionResult Detalhes(int? id)
+        // GET: Atividades/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -35,18 +35,18 @@ namespace ProjetoPratico.Controllers
             return View(atividade);
         }
 
-        // GET: Atividades/Adicionar
-        public ActionResult Adicionar()
+        // GET: Atividades/Create
+        public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Atividades/Adicionar
+        // POST: Atividades/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Adicionar([Bind(Include = "id,descricao,prazo")] Atividade atividade)
+        public ActionResult Create([Bind(Include = "id,descricao,prazo,id_projeto")] Atividade atividade)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace ProjetoPratico.Controllers
         }
 
         // GET: Atividades/Edit/5
-        public ActionResult Editar(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace ProjetoPratico.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "id,descricao,prazo")] Atividade atividade)
+        public ActionResult Edit([Bind(Include = "id,descricao,prazo,id_projeto")] Atividade atividade)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace ProjetoPratico.Controllers
         }
 
         // GET: Atividades/Delete/5
-        public ActionResult Excluir(int? id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -105,9 +105,9 @@ namespace ProjetoPratico.Controllers
         }
 
         // POST: Atividades/Delete/5
-        [HttpPost, ActionName("Excluir")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult ConfirmarExclusao(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Atividade atividade = db.Atividade.Find(id);
             db.Atividade.Remove(atividade);

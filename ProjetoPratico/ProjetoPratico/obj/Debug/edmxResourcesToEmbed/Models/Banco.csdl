@@ -7,6 +7,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="prazo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_projeto" Type="Int32" />
   </EntityType>
   <EntityType Name="Competencia">
     <Key>

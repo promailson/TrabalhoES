@@ -241,16 +241,16 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
-    <Content Include="Views\Atividades\Adicionar.cshtml" />
-    <Content Include="Views\Atividades\Excluir.cshtml" />
-    <Content Include="Views\Atividades\Detalhes.cshtml" />
-    <Content Include="Views\Atividades\Editar.cshtml" />
-    <Content Include="Views\Atividades\Index.cshtml" />
     <Content Include="Views\Enderecos\Adicionar.cshtml" />
     <Content Include="Views\Enderecos\Excluir.cshtml" />
     <Content Include="Views\Enderecos\Detalhes.cshtml" />
     <Content Include="Views\Enderecos\Editar.cshtml" />
     <Content Include="Views\Enderecos\Index.cshtml" />
+    <Content Include="Views\Atividades\Create.cshtml" />
+    <Content Include="Views\Atividades\Delete.cshtml" />
+    <Content Include="Views\Atividades\Details.cshtml" />
+    <Content Include="Views\Atividades\Edit.cshtml" />
+    <Content Include="Views\Atividades\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

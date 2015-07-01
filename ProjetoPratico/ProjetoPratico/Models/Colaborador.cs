@@ -6,7 +6,6 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoPratico.Models
 {
@@ -17,35 +16,15 @@ namespace ProjetoPratico.Models
     {
         public int id { get; set; }
         public string Nome { get; set; }
-        [Required]
-        [Display(Name = "CPF")]
         public string cpf { get; set; }
-        [Required]
-        [Display(Name = "RG")]
         public string rg { get; set; }
-        [Required]
-        [Display(Name = "Telefone")]
         public string telefone { get; set; }
-        [Required]
-        [Display(Name = "E-Mail")]
         public string email { get; set; }
-        [Required]
-        [Display(Name = "Estado Civil")]
         public Nullable<int> estadoCivil { get; set; }
-        [Required]
-        [Display(Name = "Página Pessoal")]
         public string paginaPessoal { get; set; }
-        [Required]
-        [Display(Name = "Login")]
         public string login { get; set; }
-        [Required]
-        [Display(Name = "Senha")]
         public string senha { get; set; }
-        [Required]
-        [Display(Name = "Ativo")]
         public Nullable<bool> ativo { get; set; }
-        [Required]
-        [Display(Name = "Função")]
         public Nullable<int> funcao { get; set; }
     }
 }

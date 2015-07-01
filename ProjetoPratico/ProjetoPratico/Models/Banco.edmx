@@ -18,9 +18,10 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="prazo" Type="varchar" MaxLength="50" />
+          <Property Name="id_projeto" Type="int" />
         </EntityType>
         <EntityType Name="Colaborador">
           <Key>
@@ -99,6 +100,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prazo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_projeto" Type="Int32" />
         </EntityType>
         <EntityType Name="Competencia">
           <Key>
@@ -184,6 +186,7 @@
           <EntitySetMapping Name="Atividade">
             <EntityTypeMapping TypeName="BancoModel.Atividade">
               <MappingFragment StoreEntitySet="Atividade">
+                <ScalarProperty Name="id_projeto" ColumnName="id_projeto" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="descricao" ColumnName="descricao" />
                 <ScalarProperty Name="prazo" ColumnName="prazo" />

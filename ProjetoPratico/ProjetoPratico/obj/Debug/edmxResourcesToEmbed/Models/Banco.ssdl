@@ -13,9 +13,10 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descricao" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="prazo" Type="varchar" MaxLength="50" />
+    <Property Name="id_projeto" Type="int" />
   </EntityType>
   <EntityType Name="Colaborador">
     <Key>

@@ -17,5 +17,6 @@ namespace ProjetoPratico.Models
         public int id { get; set; }
         public string descricao { get; set; }
         public string prazo { get; set; }
+        public Nullable<int> id_projeto { get; set; }
     }
 }

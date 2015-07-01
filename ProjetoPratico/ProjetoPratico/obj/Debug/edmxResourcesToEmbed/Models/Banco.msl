@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Atividade">
       <EntityTypeMapping TypeName="BancoModel.Atividade">
         <MappingFragment StoreEntitySet="Atividade">
+          <ScalarProperty Name="id_projeto" ColumnName="id_projeto" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="prazo" ColumnName="prazo" />

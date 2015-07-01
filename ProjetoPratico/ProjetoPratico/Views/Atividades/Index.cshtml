@@ -8,7 +8,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Criar Novo", "Adicionar")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -17,6 +17,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.prazo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_projeto)
         </th>
         <th></th>
     </tr>
@@ -30,9 +33,12 @@
             @Html.DisplayFor(modelItem => item.prazo)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.id }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.id }) |
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.id })
+            @Html.DisplayFor(modelItem => item.id_projeto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

@@ -58,3 +58,33 @@ C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\New
 C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.dll
 C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.pdb
 C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.csprojResolveAssemblyReference.cache
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\ProjetoPratico.dll.config
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\ProjetoPratico.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\ProjetoPratico.pdb
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Antlr3.Runtime.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\EntityFramework.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\EntityFramework.SqlServer.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Newtonsoft.Json.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Helpers.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Mvc.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Optimization.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Razor.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.Razor.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\WebGrease.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\EntityFramework.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\EntityFramework.SqlServer.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Helpers.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Mvc.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Optimization.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.Razor.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.Razor.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Antlr3.Runtime.pdb
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Newtonsoft.Json.xml
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.csprojResolveAssemblyReference.cache
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.dll
+C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.pdb
