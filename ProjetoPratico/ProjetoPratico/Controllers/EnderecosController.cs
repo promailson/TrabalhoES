@@ -37,7 +37,9 @@ namespace ProjetoPratico.Controllers
 
         // GET: Enderecos/Create
         public ActionResult Adicionar()
+
         {
+            ViewBag.teste = TempData["teste"];
             return View();
         }
 
@@ -46,8 +48,9 @@ namespace ProjetoPratico.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Adicionar([Bind(Include = "Id,logradouro,bairro,numero,complemento,cep,cidade,uf")] Endereco endereco)
+        public ActionResult Adicionar([Bind(Include = "Id,logradouro,bairro,numero,complemento,cep,cidade,uf,id_colaborador")] Endereco endereco)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Endereco.Add(endereco);
@@ -78,7 +81,7 @@ namespace ProjetoPratico.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "Id,logradouro,bairro,numero,complemento,cep,cidade,uf")] Endereco endereco)
+        public ActionResult Editar([Bind(Include = "Id,logradouro,bairro,numero,complemento,cep,cidade,uf,id_colaborador")] Endereco endereco)
         {
             if (ModelState.IsValid)
             {

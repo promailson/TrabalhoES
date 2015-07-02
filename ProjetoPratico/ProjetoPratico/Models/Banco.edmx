@@ -69,6 +69,7 @@
           <Property Name="cep" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cidade" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="uf" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_colaborador" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Projeto">
           <Key>
@@ -176,6 +177,7 @@
           <Property Name="cep" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cidade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="uf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_colaborador" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -254,6 +256,7 @@
           <EntitySetMapping Name="Endereco">
             <EntityTypeMapping TypeName="BancoModel.Endereco">
               <MappingFragment StoreEntitySet="Endereco">
+                <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
                 <ScalarProperty Name="uf" ColumnName="uf" />
                 <ScalarProperty Name="cidade" ColumnName="cidade" />
                 <ScalarProperty Name="cep" ColumnName="cep" />

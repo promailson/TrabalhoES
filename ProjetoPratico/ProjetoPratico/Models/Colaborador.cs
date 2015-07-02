@@ -11,14 +11,11 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Colaborador
     {
         public int id { get; set; }
         public string Nome { get; set; }
-        [Required]
-        [Display(Name = "CPF")]
         public string cpf { get; set; }
         public string rg { get; set; }
         public string telefone { get; set; }

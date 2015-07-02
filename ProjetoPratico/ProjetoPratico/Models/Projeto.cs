@@ -11,27 +11,13 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Projeto
     {
-        public Projeto()
-        {
-            this.Atividades = new List<Atividade>();
-        }
         public int id { get; set; }
-        [Required]
-        [Display(Name = "Descrição")]
         public string descricao { get; set; }
-        [Required]
-        [Display(Name = "Prazo")]
         public string prazo { get; set; }
-        [Required]
-        [Display(Name = "Observação")]
         public string observacao { get; set; }
-        [Required]
-        [Display(Name = "Ativo")]
         public Nullable<bool> ativo { get; set; }
-        public virtual ICollection<Atividade> Atividades{ get; set; }
     }
 }

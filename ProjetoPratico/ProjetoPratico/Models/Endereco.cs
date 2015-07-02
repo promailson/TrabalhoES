@@ -22,5 +22,6 @@ namespace ProjetoPratico.Models
         public string cep { get; set; }
         public string cidade { get; set; }
         public string uf { get; set; }
+        public int id_colaborador { get; set; }
     }
 }

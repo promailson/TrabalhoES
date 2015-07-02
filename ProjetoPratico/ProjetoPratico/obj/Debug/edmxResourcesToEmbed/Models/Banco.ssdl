@@ -64,6 +64,7 @@
     <Property Name="cep" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="cidade" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="uf" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_colaborador" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Projeto">
     <Key>

@@ -72,6 +72,7 @@
     <EntitySetMapping Name="Endereco">
       <EntityTypeMapping TypeName="BancoModel.Endereco">
         <MappingFragment StoreEntitySet="Endereco">
+          <ScalarProperty Name="id_colaborador" ColumnName="id_colaborador" />
           <ScalarProperty Name="uf" ColumnName="uf" />
           <ScalarProperty Name="cidade" ColumnName="cidade" />
           <ScalarProperty Name="cep" ColumnName="cep" />

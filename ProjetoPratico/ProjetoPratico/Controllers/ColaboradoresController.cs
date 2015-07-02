@@ -22,11 +22,13 @@ namespace ProjetoPratico.Controllers
 
         public ActionResult Detalhes(int? id)
         {
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Colaborador Colaborador = db.Colaborador.Find(id);
+            TempData["teste"] = Colaborador.id;
             if (Colaborador == null)
             {
                 return HttpNotFound();

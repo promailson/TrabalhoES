@@ -93,6 +93,9 @@
     </dl>
 </div>
 <p>
+   
     @Html.ActionLink("Editar", "Editar", "Colaboradores", new { id = Model.id }, new { @class = "btn btn-primary" })
     @Html.ActionLink("Voltar", "Index", "Colaboradores", new { @class = "btn btn-default" })
+
+    @Html.ActionLink("Adicionar Endereço", "Adicionar", "Enderecos", new { id = Model.id }, new { @class = "btn btn-primary" })
 </p>
