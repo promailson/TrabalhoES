@@ -6,7 +6,11 @@
 }
 
 <h2>Index</h2>
+@{
+    var db = new ProjetoPratico.Models.BancoEntities();
+    var projeto = "";
 
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -24,23 +28,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.prazo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_projeto)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        projeto = db.Projeto.First(p => p.id == item.id_projeto).descricao;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prazo)
+            </td>
+            <td>
+
+                @projeto
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
 
 </table>

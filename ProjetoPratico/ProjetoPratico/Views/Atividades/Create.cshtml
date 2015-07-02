@@ -34,8 +34,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.id_projeto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.id_projeto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.id_projeto, "", new { @class = "text-danger" })
+                @{
+                     var db = new ProjetoPratico.Models.BancoEntities();
+                  var projetos = from item in db.Projeto.ToList()
+                  select new SelectListItem { Selected = false, Text = item.descricao, Value = item.id.ToString() };
+                }
+                @Html.DropDownListFor(model => model.id_projeto, projetos, "Selecione", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_projeto)
             </div>
         </div>
 

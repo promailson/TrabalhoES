@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Detalhes";
+    var projeto = "";
 }
 
 <h2>Detalhes</h2>
@@ -42,7 +43,52 @@
             @Html.DisplayFor(model => model.ativo)
         </dd>
 
+
     </dl>
+
+    <table class="table">
+        <tr>
+            <th>
+               Descrição
+            </th>
+            <th>
+                Prazo
+            </th>
+            <th>
+               Projeto
+            </th>
+            <th></th>
+        </tr>
+
+        @{var db = new ProjetoPratico.Models.BancoEntities();
+          var atividades = (from m in db.Atividade
+                            where m.id_projeto == Model.id
+                            select m).ToList();
+        }
+        @foreach (var item in atividades)
+        {
+            projeto = db.Projeto.First(p => p.id == item.id_projeto).descricao;
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prazo)
+                </td>
+                <td>
+
+                    @projeto
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
 </div>
 <p>
     @Html.ActionLink("Editar", "Editar", "Projetos", new { id = Model.id }, new { @class = "btn btn-primary" })
