@@ -161,9 +161,11 @@
     <Compile Include="Models\Endereco.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Funcoes.cs" />
     <Compile Include="Models\Projeto.cs">
       <DependentUpon>Banco.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StringValueAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -241,7 +243,7 @@
     <Content Include="Views\Competencias\Excluir.cshtml" />
     <Content Include="Views\Competencias\Editar.cshtml" />
     <Content Include="Views\Competencias\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\LoginOld.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
     <Content Include="Views\Enderecos\Adicionar.cshtml" />
@@ -254,6 +256,7 @@
     <Content Include="Views\Atividades\Details.cshtml" />
     <Content Include="Views\Atividades\Edit.cshtml" />
     <Content Include="Views\Atividades\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

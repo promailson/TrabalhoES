@@ -11,7 +11,9 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Colaborador
     {
         public int id { get; set; }
@@ -22,9 +24,19 @@ namespace ProjetoPratico.Models
         public string email { get; set; }
         public Nullable<int> estadoCivil { get; set; }
         public string paginaPessoal { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório", AllowEmptyStrings = false)]
         public string login { get; set; }
+        [Required(ErrorMessage = "Campo obrigatório", AllowEmptyStrings = false)]
         public string senha { get; set; }
         public Nullable<bool> ativo { get; set; }
         public Nullable<int> funcao { get; set; }
+
+    }
+    public enum FuncoesEnum
+    {
+        Administrador = 0,
+        Gerente = 1,
+        Moderador = 2,
+        Colaborador = 3
     }
 }

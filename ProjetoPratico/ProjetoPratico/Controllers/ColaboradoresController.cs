@@ -16,24 +16,29 @@ namespace ProjetoPratico.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Colaborador.ToList());
+            if (Session["LoginID"] != null) { return View(db.Colaborador.ToList()); }
+            else { return RedirectToAction("Login","Home"); }
+            
         }
 
 
         public ActionResult Detalhes(int? id)
         {
-           
-            if (id == null)
+            if (Session["LoginID"] != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Colaborador Colaborador = db.Colaborador.Find(id);
+                TempData["teste"] = Colaborador.id;
+                if (Colaborador == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(Colaborador);
             }
-            Colaborador Colaborador = db.Colaborador.Find(id);
-            TempData["teste"] = Colaborador.id;
-            if (Colaborador == null)
-            {
-                return HttpNotFound();
-            }
-            return View(Colaborador);
+            else { return RedirectToAction("Login", "Home"); }
         }
 
 

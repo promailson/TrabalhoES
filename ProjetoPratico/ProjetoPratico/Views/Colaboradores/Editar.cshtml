@@ -19,7 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.funcao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-              @Html.DropDownListFor(model => model.funcao, (List<SelectListItem>)ViewBag.funcao, "Selecione", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.funcao, ProjetoPratico.Models.Funcoes.EnumToSelectListItem<ProjetoPratico.Models.FuncoesEnum>(), "Selecione", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.funcao, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.senha, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.senha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.PasswordFor(model => model.senha, new { @class = "form-control" } )
                 @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
             </div>
         </div>

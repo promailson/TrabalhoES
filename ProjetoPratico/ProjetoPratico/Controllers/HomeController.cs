@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoPratico.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,10 @@ namespace ProjetoPratico.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            if (Session["LoginID"] != null) { return View(); }
+            else { return RedirectToAction("Login"); }
+
+
         }
 
         public ActionResult About()
@@ -31,5 +35,31 @@ namespace ProjetoPratico.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(Colaborador user)
+        {
+            if (ModelState.IsValid)
+            {
+                using (BancoEntities db = new BancoEntities())
+                {
+                    var v = db.Colaborador.Where(a => a.login.Equals(user.login) && a.senha.Equals(user.senha)).FirstOrDefault();
+                    if (v != null)
+                    {
+                        Session["LoginID"] = v.id.ToString();
+                        Session["NomeLogado"] = v.Nome.ToString();
+                        return RedirectToAction("Index");
+                    }
+                }
+            }
+            return View(user);
+        }
+
+        public ActionResult Sair()
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
+        }
+
     }
 }
