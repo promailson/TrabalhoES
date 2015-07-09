@@ -21,7 +21,7 @@ namespace ProjetoPratico.Models
         [Display(Name = "Descrição")]
         public string descricao { get; set; }
 
-        [Display(Name = "Prazo")]
+        [Display(Name = "Prazo (em dias)")]
         public string prazo { get; set; }
 
         [Display(Name = "Observação")]
