@@ -11,11 +11,17 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ColaboradorEndereco
     {
+        [Display(Name = "ID")]
         public int Id { get; set; }
+
+        [Display(Name = "Colaborador")]
         public int id_colaborador { get; set; }
+
+        [Display(Name = "Endereço")]
         public int id_endereco { get; set; }
     }
 }

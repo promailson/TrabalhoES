@@ -16,19 +16,42 @@ namespace ProjetoPratico.Models
 
     public partial class Colaborador
     {
+
+        [Display(Name = "ID")]
         public int id { get; set; }
+
         public string Nome { get; set; }
+        
+        [Display(Name = "CPF")]
         public string cpf { get; set; }
+
+        [Display(Name = "RG")]
         public string rg { get; set; }
+
+        [Display(Name = "Telefone")]
         public string telefone { get; set; }
+
+        [Display(Name = "Email")]
         public string email { get; set; }
+
+        [Display(Name = "Estado Civil")]
         public Nullable<int> estadoCivil { get; set; }
+
+        [Display(Name = "Página Pessoal")]
         public string paginaPessoal { get; set; }
+
+        [Display(Name = "Login")]
         [Required(ErrorMessage = "Campo obrigatório", AllowEmptyStrings = false)]
         public string login { get; set; }
+
+        [Display(Name = "Senha")]
         [Required(ErrorMessage = "Campo obrigatório", AllowEmptyStrings = false)]
         public string senha { get; set; }
+
+        [Display(Name = "Ativo")]
         public Nullable<bool> ativo { get; set; }
+
+        [Display(Name = "Função")]
         public Nullable<int> funcao { get; set; }
 
     }

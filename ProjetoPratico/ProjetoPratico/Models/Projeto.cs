@@ -11,13 +11,23 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Projeto
     {
+        [Display(Name = "ID")]
         public int id { get; set; }
+
+        [Display(Name = "Descrição")]
         public string descricao { get; set; }
+
+        [Display(Name = "Prazo")]
         public string prazo { get; set; }
+
+        [Display(Name = "Observação")]
         public string observacao { get; set; }
+
+        [Display(Name = "Ativo")]
         public Nullable<bool> ativo { get; set; }
     }
 }

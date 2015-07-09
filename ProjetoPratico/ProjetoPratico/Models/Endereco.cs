@@ -11,17 +11,35 @@ namespace ProjetoPratico.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Endereco
     {
+        [Display(Name = "ID")]
         public int Id { get; set; }
+        
+        [Display(Name = "Logradouro")]
         public string logradouro { get; set; }
+
+        [Display(Name = "Bairro")]
         public string bairro { get; set; }
+
+        [Display(Name = "Número")]
         public string numero { get; set; }
+
+        [Display(Name = "Complemento")]
         public string complemento { get; set; }
+
+        [Display(Name = "CEP")]
         public string cep { get; set; }
+
+        [Display(Name = "Cidade")]
         public string cidade { get; set; }
+
+        [Display(Name = "UF")]
         public string uf { get; set; }
+        
+        [Display(Name = "Colaborador")]
         public int id_colaborador { get; set; }
     }
 }
