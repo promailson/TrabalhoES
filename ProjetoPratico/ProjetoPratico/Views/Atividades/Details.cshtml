@@ -1,11 +1,10 @@
 ﻿@model ProjetoPratico.Models.Atividade
 
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "   Detalhes";    
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
     <h4>Atividade</h4>
@@ -38,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", "Atividades", new { id = Model.id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Voltar", "Index", "Atividades", new { @class = "btn btn-default" })
 </p>
