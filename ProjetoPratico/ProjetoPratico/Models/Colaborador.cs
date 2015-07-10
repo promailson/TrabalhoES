@@ -47,7 +47,7 @@ namespace ProjetoPratico.Models
         [Display(Name = "Senha")]
         [Required(ErrorMessage = "Campo obrigatório", AllowEmptyStrings = false)]
         [MinLength(5, ErrorMessage = "A senha deve conter no mínimo 8 caracteres.")]
-        [StringLength(200, ErrorMessage = "A senha deve conter no máximo 12 caracteres.")]
+        [StringLength(12, ErrorMessage = "A senha deve conter no máximo 12 caracteres.")]
         public string senha { get; set; }
 
         [Display(Name = "Ativo")]
