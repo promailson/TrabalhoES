@@ -57,7 +57,6 @@ C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Ant
 C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Newtonsoft.Json.xml
 C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.dll
 C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.pdb
-C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.csprojResolveAssemblyReference.cache
 C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\ProjetoPratico.dll.config
 C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\ProjetoPratico.dll
 C:\Users\Fernanda\Documents\Mestrado\Ufscar\Engenharia de Software\Trabalho\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\ProjetoPratico.pdb
@@ -118,3 +117,4 @@ C:\Users\Debora\Documents\GitHub\TrabalhoES\TrabalhoES\ProjetoPratico\ProjetoPra
 C:\Users\Debora\Documents\GitHub\TrabalhoES\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\System.Web.WebPages.Razor.xml
 C:\Users\Debora\Documents\GitHub\TrabalhoES\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Antlr3.Runtime.pdb
 C:\Users\Debora\Documents\GitHub\TrabalhoES\TrabalhoES\ProjetoPratico\ProjetoPratico\bin\Newtonsoft.Json.xml
+C:\Users\Akira\Documents\GitHub\TrabalhoES\ProjetoPratico\ProjetoPratico\obj\Debug\ProjetoPratico.csprojResolveAssemblyReference.cache

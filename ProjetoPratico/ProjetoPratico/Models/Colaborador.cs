@@ -12,10 +12,13 @@ namespace ProjetoPratico.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Security.Cryptography;
+    using System.Text;
     using System.Web.Mvc;
 
     public partial class Colaborador
     {
+        private string senha_;
 
         [Display(Name = "ID")]
         public int id { get; set; }
@@ -47,8 +50,8 @@ namespace ProjetoPratico.Models
         [Display(Name = "Senha")]
         [Required(ErrorMessage = "Campo obrigatório", AllowEmptyStrings = false)]
         [MinLength(5, ErrorMessage = "A senha deve conter no mínimo 8 caracteres.")]
-        [StringLength(12, ErrorMessage = "A senha deve conter no máximo 12 caracteres.")]
-        public string senha { get; set; }
+        [StringLength(32, ErrorMessage = "A senha deve conter no máximo 12 caracteres.")]
+        public string senha { get { return senha_; } set { senha_ = Encript.CalculaHash(value); } }
 
         [Display(Name = "Ativo")]
         public Nullable<bool> ativo { get; set; }
@@ -63,5 +66,21 @@ namespace ProjetoPratico.Models
         Gerente = 1,
         Moderador = 2,
         Colaborador = 3
+    }
+    public static class Encript
+    {
+        public static string CalculaHash(string input)
+        {
+            MD5 encriptador = MD5.Create();
+            byte[] inputBytes = encriptador.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < inputBytes.Length; i++)
+            {
+                sb.Append(inputBytes[i].ToString("X2"));
+            }
+
+            return sb.ToString();
+        }
     }
 }
